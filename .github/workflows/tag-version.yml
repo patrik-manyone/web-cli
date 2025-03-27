@@ -35,6 +35,8 @@ jobs:
           fi
 
       - name: Create tag
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
