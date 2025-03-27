@@ -40,5 +40,7 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
           git tag ${{ steps.check_tag.outputs.tag }}
           git push origin ${{ steps.check_tag.outputs.tag }}
+        
