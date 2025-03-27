@@ -1,6 +1,7 @@
-import { CLI } from "../src/cli";
-import openCommand from "../src/commands/open";
-import { createHelpCommand } from "../src/commands/help";
+import { CLI } from "../src/cli.js";
+import openCommand from "../src/commands/open.js";
+import { createHelpCommand } from "../src/commands/help.js";
+
 
 // A simple DOM terminal that listens for key events and displays both input and output
 class DomTerminal {
@@ -71,8 +72,9 @@ class DomTerminal {
     outputSpan.className = "cli-output";
     outputSpan.textContent = text;
     // Append the output span and add a line break for readability
-    this.parent.appendChild(outputSpan);
-    this.parent.appendChild(document.createElement("br"));
+    
+    this.parent.insertBefore(outputSpan, this.inputLine);
+    this.parent.insertBefore(document.createElement("br"), this.inputLine);
   }
 }
 

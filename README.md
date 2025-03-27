@@ -36,15 +36,15 @@ WebCLI is a simple CLI-like navigation tool for websites that listens to keyboar
    npm run build
    ```
 
-### Running the Project
+### Running the Examples
 
-You can open the `public/index.html` file directly in your browser or serve the project using a static server. For example, if you have `live-server` installed globally, run:
+To serve the examples locally run (make sure you build first):
 
 ```bash
 npm run start
 ```
 
-Then open the provided URL in your browser.
+Then open the an example URL in your browser (e.g http://localhost/examples/index.html)
 
 ## Usage
 
