@@ -34,17 +34,26 @@ jobs:
             exit 1
           fi
 
-      - name: Create and push Git tag using auth-origin
+      - name: Debug token access to GitHub (optional but useful)
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          echo "🔐 Testing GitHub access with token..."
+          git ls-remote https://x-access-token:$GH_PAT@github.com/${{ github.repository }} || {
+            echo "❌ Token does NOT have access to repo!"
+            exit 1
+          }
+
+      - name: Create and push Git tag
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           TAG: ${{ steps.check_tag.outputs.tag }}
         run: |
+          echo "🏷️ Tagging and pushing: $TAG"
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
 
-          # Add a new remote with embedded token
-          git remote add auth-origin https://x-access-token:$GH_PAT@github.com/${{ github.repository }}
-
-          # Push the new tag to the authenticated remote
+          # Safe: overwrite origin with authenticated URL
+          git remote set-url origin https://x-access-token:$GH_PAT@github.com/${{ github.repository }}
           git tag "$TAG"
-          git push auth-origin "$TAG"
+          git push origin "$TAG"
