@@ -2,6 +2,10 @@
   "name": "webcli",
   "version": "1.0.0",
   "description": "A CLI-like navigation tool for websites that listens to key events and executes commands.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patrik-manyone/web-cli.git"
+  },
   "main": "src/index.ts",
   "scripts": {
     "build": "tsc && npm run copy-static",
