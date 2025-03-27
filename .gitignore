@@ -1,0 +1,19 @@
+# Node modules
+node_modules/
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Generated files in public folder (if desired)
+# If you want to ignore the entire public folder (i.e. it is completely generated),
+# uncomment the next line:
+# public/
+
+# Otherwise, ignore only generated JavaScript files and sourcemaps:
+# public/**/*.js
+# public/**/*.js.map
