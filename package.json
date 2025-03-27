@@ -1,6 +1,6 @@
 {
   "name": "webcli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A CLI-like navigation tool for websites that listens to key events and executes commands.",
   "repository": {
     "type": "git",
