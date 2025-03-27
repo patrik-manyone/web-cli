@@ -34,7 +34,7 @@ jobs:
             exit 1
           fi
 
-      - name: Create tag
+      - name: Create and push Git tag
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
         run: |
@@ -43,4 +43,3 @@ jobs:
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
           git tag ${{ steps.check_tag.outputs.tag }}
           git push origin ${{ steps.check_tag.outputs.tag }}
-        
