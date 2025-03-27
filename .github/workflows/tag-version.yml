@@ -41,5 +41,10 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           git remote set-url origin https://x-access-token:${GH_PAT}@github.com/${{ github.repository }}
-          git tag ${{ steps.check_tag.outputs.tag }}
-          git push origin ${{ steps.check_tag.outputs.tag }}
+
+          echo "✅ Remote updated, verifying access..."
+          git ls-remote origin || { echo "❌ Cannot access remote"; exit 1; }
+
+          TAG=${{ steps.check_tag.outputs.tag }}
+          git tag "$TAG"
+          git push origin "$TAG"
