@@ -1,6 +1,7 @@
 import { CLI } from "../src/cli.js";
 import openCommand from "../src/commands/open.js";
 import { createHelpCommand } from "../src/commands/help.js";
+import helloCommand from "./commands/hello.js";
 // A simple DOM terminal that listens for key events and displays both input and output
 class DomTerminal {
     constructor(cli, parent) {
@@ -68,6 +69,7 @@ class DomTerminal {
 const cli = new CLI();
 cli.registerCommand(openCommand);
 cli.registerCommand(createHelpCommand(cli));
+cli.registerCommand(helloCommand);
 // Find the parent element in the DOM (ensure an element with id "cli-container" exists in your HTML)
 const parentElement = document.getElementById("cli-container");
 if (parentElement) {
