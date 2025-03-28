@@ -46,3 +46,14 @@ jobs:
           git tag "$TAG"
           echo "🚀 Pushing tag $TAG"
           git push origin "$TAG"
+
+      - name: Create GitHub Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+        with:
+          tag_name: ${{ steps.check_tag.outputs.tag }}
+          release_name: Release ${{ steps.check_tag.outputs.tag }}
+          draft: false
+          prerelease: false
