@@ -6,13 +6,14 @@
     "type": "git",
     "url": "https://github.com/patrik-manyone/web-cli.git"
   },
-  "main": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc && npm run copy-static",
-    "copy-static": "copyfiles -u 1 \"examples/**/*.html\" public/examples",
-    "start": "python3 -m http.server 81 --directory public"
+    "copy-static": "copyfiles -u 1 \"examples/**/*.html\" dist/examples",
+    "start": "python3 -m http.server 81 --directory dist"
   },
-  "author": "Your Name",
+  "author": "PAtrik Svensson / Metervara",
   "license": "MIT",
   "devDependencies": {
     "copyfiles": "^2.4.1",

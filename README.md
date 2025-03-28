@@ -2,6 +2,8 @@
 
 WebCLI is a simple CLI-like navigation tool for websites that listens to keyboard events, accepts command input, and executes commands. Its modular architecture makes it easy to add new commands by defining them in separate files.
 
+![example usage](./assets/webcli-01.png)
+
 ## Features
 
 - **Modular Commands:** Each command is defined in its own file.
@@ -9,11 +11,6 @@ WebCLI is a simple CLI-like navigation tool for websites that listens to keyboar
 - **Custom Commands:** Extend the CLI by simply adding new command modules.
 
 ## Getting Started
-
-### Prerequisites
-
-- [Node.js](https://nodejs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
 
 ### Installation
 
